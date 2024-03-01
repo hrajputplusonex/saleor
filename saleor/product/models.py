@@ -797,7 +797,7 @@ class ProductMedia(SortableModel):
     product = models.ForeignKey(
         Product, related_name="media", on_delete=models.SET_NULL, null=True, blank=True
     )
-    image = models.ImageField(upload_to="products", blank=True, null=True)
+    image = models.ImageField(upload_to="products", blank=True, null=True, max_length=500)
     alt = models.CharField(max_length=128, blank=True)
     type = models.CharField(
         max_length=32,

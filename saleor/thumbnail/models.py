@@ -15,7 +15,7 @@ def validate_thumbnail_size(size: int):
 
 
 class Thumbnail(models.Model):
-    image = models.ImageField(upload_to="thumbnails")
+    image = models.ImageField(upload_to="thumbnails", max_length=500)
     size = models.PositiveIntegerField(validators=[validate_thumbnail_size])
     format = models.CharField(
         max_length=32, null=True, blank=True, choices=ThumbnailFormat.CHOICES
